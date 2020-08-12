@@ -17,8 +17,8 @@ public class CountThreadsMain {
         CountThread uno = new CountThread(0,99);
         CountThread dos = new CountThread(100,199);
         CountThread tres = new CountThread(200,299);
-        uno.start();
-        dos.start();
-        tres.start();
+        uno.run();
+        dos.run();
+        tres.run();
     }
 }
