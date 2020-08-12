@@ -11,4 +11,4 @@
 ![run](imagenes/run.jpg)
 ________________________
 
-![](Imagenes/start.jpeg)
+![](imagenes/start.jpg)
