@@ -8,4 +8,7 @@
   para iniciar el hilo a diferencia del extend ya que se herada el thread y podemos 
   usar sus metodos.
 
-![alt text](https://github.com/JuanManuelHerreraMoya/ARWS_LAB1/imagenes/run.jpg)
+![run](imagenes/run.jpg)
+________________________
+
+![](Imagenes/start.jpeg)
