@@ -15,6 +15,11 @@ public class PrimeFinderThread extends Thread{
 	private boolean fly;
 
 	private List<Integer> primes;
+
+	public PrimeFinderThread(int segundos){
+		super();
+		this.segundos=segundos;
+	}
 	
 	public PrimeFinderThread(int a, int b, int hilo, int segundos) {
 		super();
@@ -37,34 +42,24 @@ public class PrimeFinderThread extends Thread{
 			}
 	}
 
+	public void setFly(boolean v){
+		this.fly=v;
+	}
+
 	public boolean isFly(){
 		return fly;
 	}
 
-	public void setFly() {
-		try{
-			ver();
-		}catch (InterruptedException e){
-			e.printStackTrace();
-		}
-		/*
-		synchronized (this) {
-			fly = false;
-			System.out.println("Thread " + hilo + " conto " + getPrimes().size() + " primos");
-			wait();
-			copia = Calendar.getInstance();
-			copia.add(Calendar.SECOND  , segundos/1000);
-		}
-		 */
+	public void print(){
+		System.out.println("Thread " + hilo + " conto " + getPrimes().size() + " primos");
 	}
 
 	public void ver() throws InterruptedException{
+		System.out.println("Esperando");
+		Thread.sleep(segundos);
 		synchronized (this) {
 			if(fly){
-				System.out.println("Thread " + hilo + " conto " + getPrimes().size() + " primos");
 				fly=false;
-				copia = Calendar.getInstance();
-				copia.add(Calendar.SECOND  , segundos/1000);
 				notifyAll();
 			}
 
@@ -77,8 +72,9 @@ public class PrimeFinderThread extends Thread{
 				hora = Calendar.getInstance();
 				if (hora.equals(copia)) {
 					fly=true;
-					System.out.println("Thread " + hilo + " conto " + getPrimes().size() + " primos");
 					wait();
+					copia = Calendar.getInstance();
+					copia.add(Calendar.SECOND  , segundos/1000);
 				}
 				if (isPrime(i)) {
 					primes.add(i);

@@ -18,6 +18,8 @@ public class Control extends Thread {
 
     private final int NDATA = MAXVALUE / NTHREADS;
 
+    private final PrimeFinderThread pF = new PrimeFinderThread(TMILISECONDS);
+
     private PrimeFinderThread pft[];
     
     private Control() {
@@ -38,43 +40,47 @@ public class Control extends Thread {
 
     @Override
     public void run() {
-        /*
+
+        int cp = NDATA;
+
         Thread t = new Thread( new Runnable() {
             @Override
             public void run() {
                 try {
-                    System.out.println("Entro aca? no se");
-                    for (int i = 0; i < NTHREADS; i++) {
+                    int k=0;
+                    for (int i = 0; k < NTHREADS*3; i++) {
+                        k++;
+                        if(i==NTHREADS){
+                            i=0;
+                        }
                         if(pft[i].isFly()){
-                            System.out.println("Espicha la tecla enter para continuar");
-                            Scanner key = new Scanner(System.in);
-                            String s = key.nextLine();
-                            if(s.equals("")){
-                                for (int h = 0; h < NTHREADS; h++) {
-                                    pft[h].ver();
-                                }
-                            }
-                            for (int j = 0; j < NTHREADS; j++) {
-                                pft[j].setFly();
+                            System.out.println("Espiche la tecla ENTER para continuar");
+                            Scanner myObj = new Scanner(System.in);
+                            String key = myObj.nextLine();
+                            if(key.equals("")){
+                                pft[i].ver();
+                                for (int j = 0; j < NTHREADS; j++) {
+                                    pft[j].print();
                                 }
                             }
                         }
+                        pft[i].setFly(true);
+                        pft[i].ver();
+                        for (int j = 0; j < NTHREADS; j++) {
+                            pft[j].print();
+                        }
+                    }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         });
-        t.start();
-         */
 
         for (int i = 0; i < NTHREADS; i++) {
             pft[i].start();
         }
 
-        for (int i = 0; i < NTHREADS; i++) {
-            pft[i].setFly();
-        }
-
+        t.start();
     }
 
 
