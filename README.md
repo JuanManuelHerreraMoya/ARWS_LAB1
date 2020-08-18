@@ -45,4 +45,5 @@ _______________________
 ___________________________
 
 6. En la siugiente imagen podemos observar como aumentando el numero de threads disminuye el tiempo de ejecucuion de el prograama haciendo que entre mas threads el tiempo tienda ir a cero
+
 ![](imagenes/grafica.jpg)
