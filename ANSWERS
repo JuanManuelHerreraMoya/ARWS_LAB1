@@ -1,0 +1,16 @@
+2.1 Possible race conditions
+
+	Res: La condición de carrera se puede presentar cuando las serpientes lleguen a un poder al mismo tiempo, no debería pasar que solo
+	una o todas obtengan el poder, en particular para este caso solo una.
+	
+2.2 An incorrect or inappropriate use of collections, considering its concurrent
+    handling(For this increase the game speed and execute it multiples times until an error has been raised).
+	
+	Res:
+	
+2.3  Unnecessary use of active waits
+
+	Res: Al ve el código noto que las esperar activas que hay no son innecesarias por dos razones, 
+	sirven para verificar si hay elementos en la matriz, o para verificar que una acción ya termino o no,
+	como la vida de la serpiente.
+	

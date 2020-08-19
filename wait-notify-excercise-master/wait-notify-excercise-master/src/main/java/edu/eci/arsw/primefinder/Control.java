@@ -41,8 +41,6 @@ public class Control extends Thread {
     @Override
     public void run() {
 
-        int cp = NDATA;
-
         Thread t = new Thread( new Runnable() {
             @Override
             public void run() {
