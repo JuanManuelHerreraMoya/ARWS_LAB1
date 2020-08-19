@@ -47,3 +47,13 @@ ___________________________
 6. En la siugiente imagen podemos observar como aumentando el numero de threads disminuye el tiempo de ejecucuion de el prograama haciendo que entre mas threads el tiempo tienda ir a cero
 
 ![](imagenes/grafica.jpg)
+
+La ley de Amdahl es utilizada para averiguar la mejora máxima de un sistema de información cuando solo una parte de éste es mejorado, en nuestro laboratorio de Balck list nos podemos dar cuenta como se ve efectuada esta ley ya que , teniendo 1 nucelo teniendo 4 y teniendo 8 nucleos, se ven como el rendimiento va aumentando y se demora menos tiempo de ejecucion , pero despues de aumentar los nucleos que tiene el pc , ya sean 8 o 16 o 32, el tiempo de ejecucion es minimo en cuanto a diferencias , ya que gracias a la ley podemos desmotrar que no hay mas rendimiento teniendo 200 threads a tener 500 threads , claro que se vera afectado , pero en milisegundo o aun menos.
+
+
+How does the solution behave using as many processing threads as cores compared to the result of using twice as much?
+
+Mi computador tiene 4 nucloes y 8 Hilos , al poner los mismo Threads que Nucleos nos podemos dar cuenta que la velocidad es de 36 segundo , pero al aumentar los Threads al numeros de hilos de mi pc ,nos damos cuenta que hay una dismunicion a 18 segundos , se aumenta el rendimiento en un 50%.
+
+__________________________________________________________
+__________________________________________________________
