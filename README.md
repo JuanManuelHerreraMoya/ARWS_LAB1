@@ -59,7 +59,8 @@ Control threads using wait/notify.
 
 2. Modify the application in such way that each t milliseconds of thread execution, all the threads stop and show the number of primes found until that moment. Then, you have to wait until press ENTER in order to resume the threads execution.Use the synchronization mechanisms given by java (wait y notify, notifyAll)  
 
-Nota: Para poder ejecutar el programa debemos:
+Nota: Para poder ejecutar el programa debemos
+
     1. mvn package
     2. mvn exec:java -Dexec.mainClass="edu.eci.arsw.primefinder.Main"
 
@@ -83,7 +84,9 @@ SnakeRace is an autonomous version, multi-snake of the famous game called 'snake
       + Possible race conditions
       + An incorrect or inappropriate use of collections, considering its concurrent handling(For this increase the game speed and execute it multiples times until an error has         been raised).
       + Unnecessary use of active waits
+      
 NOTA: Estas respues se encuentran [aquí](https://github.com/JuanManuelHerreraMoya/ARWS_LAB1/blob/master/ANSWERS) o en el archivo ASNWERS.txt que esta al principio.
+
 3. Identify critical regions associated with race conditions, and do something in order to eliminate them.Note that you have to synchronize strictly needed. In the answers document suggest the solution proposed for each item of the point 2. As the same way note that you don´t have to add more race conditions
 4. As you can see, the game is incomplete. Write code in order to implement functionallities through buttons in the GUI to start / Pause / Resume the game: start the game if it has not started, Pause the game if it is on, Resume the game if it is suspended. Keep in mind:
     + When the game has been paused, in some point of the screen you have to show 
