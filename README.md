@@ -59,6 +59,10 @@ Control threads using wait/notify.
 
 2. Modify the application in such way that each t milliseconds of thread execution, all the threads stop and show the number of primes found until that moment. Then, you have to wait until press ENTER in order to resume the threads execution.Use the synchronization mechanisms given by java (wait y notify, notifyAll)  
 
+Nota: Para poder ejecutar el programa debemos:
+    1. mvn package
+    2. mvn exec:java -Dexec.mainClass="edu.eci.arsw.primefinder.Main"
+
 Vemos que antes de pedirnos el ENTER si alcanso a hacer a algun cambio en algun thread antes de que hiciera wait en todos nos lo mostrara.
 
 ![](imagenes/Primos.PNG)
