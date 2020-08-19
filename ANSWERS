@@ -6,7 +6,7 @@
 2.2 An incorrect or inappropriate use of collections, considering its concurrent
     handling(For this increase the game speed and execute it multiples times until an error has been raised).
 	
-	Res:
+	Res: El error se produce por un mal manejo de la coleccion que representa el cuerpo de la serpiente.
 	
 2.3  Unnecessary use of active waits
 
