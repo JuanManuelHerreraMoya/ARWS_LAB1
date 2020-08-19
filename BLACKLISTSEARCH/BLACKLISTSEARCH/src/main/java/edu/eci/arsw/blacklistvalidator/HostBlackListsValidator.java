@@ -61,6 +61,7 @@ public class HostBlackListsValidator {
         for (int i=0; i < partesRango.length-1; i++){
             hostBlackList_p.get(i).start();
         }
+
         
         //LOG.log(Level.INFO, "Checked Black Lists:{0} of {1}", new Object[]{countCheckedLists, skds.getRegisteredServersCount()});
         

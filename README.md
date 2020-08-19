@@ -1,6 +1,7 @@
 # ARWS_LAB1
 
-## Primera parte
+## BlackLists
+### Primera parte
 Part I - Introduction to threads in JAVA
 In agreement with the lectures, complete the classes CountThread, so that they define the life cycle of a thread that prints the numbers between A and B on the screen.
 Complete the main method of the CountMainThreads class so that: 
@@ -25,3 +26,24 @@ _______________________
 3. Usamos el run y nos damos cuenta que como no se inicia el hilo , ejecuta secuencialmente el metodo run y mostrara en orden los rangos de acuerdo como se coloquen en el main
 
   ![run](imagenes/run.jpg)
+  
+### Cuarta Parte
+1. A continuacion podemos ver con ayuda de visuamVM como al usar un solo thread hace uso del procesador y cuanto tiempo demora en hacer la ejecucion de todos los host para encontrar la ip
+![](imagenes/1Thread.jpg)
+
+2. En este caso usaremos 4 threads que son el numero de nucelos que tiene mi procesador 
+![](imagenes/4Threads.jpg)
+
+3. Ahora usaremos 8 threads que son los hilos que tiene mi procesador 
+![](imagenes/8Threads.jpg)
+
+4.Para la ejecucion de 50 y 100 hilos la ejecucion es muy rapida y el visuamVM no alcanza a detectar el rendimiento de la CPU
+![](imagenes/50Threads.jpg)
+
+5.La respuesta sera la sieguiente en los anteriores ejemplos ya que es la misma ip
+![](imagenes/respuesta.jpg)
+___________________________
+
+6. En la siugiente imagen podemos observar como aumentando el numero de threads disminuye el tiempo de ejecucuion de el prograama haciendo que entre mas threads el tiempo tienda ir a cero
+
+![](imagenes/grafica.jpg)
