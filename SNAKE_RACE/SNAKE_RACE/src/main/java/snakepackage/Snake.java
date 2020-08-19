@@ -15,6 +15,7 @@ public class Snake extends Observable implements Runnable {
     private LinkedList<Cell> snakeBody = new LinkedList<Cell>();
     //private Cell objective = null;
     private Cell start = null;
+    private boolean stop=false;
 
     private boolean snakeEnd = false;
 
@@ -47,29 +48,51 @@ public class Snake extends Observable implements Runnable {
 
     @Override
     public void run() {
+
         while (!snakeEnd) {
             
             snakeCalc();
 
-            //NOTIFY CHANGES TO GUI
-            setChanged();
-            notifyObservers();
+            if(stop){
+                try {
+                    paro();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
 
             try {
                 if (hasTurbo == true) {
-                    Thread.sleep(500 / 3);
+                    Thread.sleep(10 / 3);
                 } else {
-                    Thread.sleep(500);
+                    Thread.sleep(10);
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
         }
-        
         fixDirection(head);
-        
-        
+    }
+
+    public void paro() throws InterruptedException{
+        synchronized (this){
+            wait();
+        }
+    }
+
+    public void detener() {
+        synchronized (this) {
+            stop=true;
+            notifyAll();
+        }
+    }
+
+    public void reanudar() {
+        synchronized (this) {
+            stop=false;
+            notifyAll();
+        }
     }
 
     private void snakeCalc() {
@@ -206,6 +229,7 @@ public class Snake extends Observable implements Runnable {
                         x = random.nextInt(GridSize.GRID_HEIGHT);
                         y = random.nextInt(GridSize.GRID_WIDTH);
                     }
+
                     Board.food[i] = new Cell(x, y);
                     Board.gameboard[x][y].setFood(true);
                 }
